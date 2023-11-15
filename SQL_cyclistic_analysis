@@ -1,0 +1,145 @@
+Analysis on Cyclistic bikes; how members and casuals use bikes differently.
+
+-- how mmany annual members and annual riders hired a bike?
+select customer_type, count(customer_type) as member_casual
+from [dbo].[cyclistic_trans_2022]
+group by customer_hire
+-- annual members are about 2.9M, casual riders are about 2.1M
+
+-- what are the different bike types and which is the most hired?
+select ride_type, count(ride_type) as counts
+from [dbo].[cyclistic_trans_2022]
+group by ride_type
+order by counts desc
+-- electric, classic, and docked bikes. electric bikes are the most hired.
+
+
+-- how does member and casual riders use the different bike types? which has the highest count?
+select  customer_type, ride_type, count(ride_type) as counts
+from [dbo].[cyclistic_trans_2022]
+group by ride_type, customer_type
+order by counts desc
+--both member and casual riders uses classic and electric bikes, only casual riders use docked_bikes.
+-- members using classic bikes has the highest count, with about 1.5M 
+
+-- how does annual members and casual riders hire bikes at day/night?
+select customer_type, day_night, count(day_night) as counts
+from [dbo].[cyclistic_trans_2022]
+group by customer_type, day_night
+order by counts desc
+-- both members and casuals hire at daytime more than nigthtime.
+
+-- which is the top 3 days for both member and casual hires?
+select customer_type, weekday_hire, count(weekday_hire) as counts
+from [dbo].[cyclistic_trans_2022]
+group by customer_type, weekday_hire
+order by counts desc
+-- members: friday, monday, saturday.
+-- casuals: saturday, sunday, friday.
+
+-- which is the top 3 days for maximum average minutes spent on hire for both member and casual hires?
+select customer_type, weekday_hire, avg(mins_hire) as average_minutes
+from [dbo].[cyclistic_trans_2022]
+group by customer_type, weekday_hire
+order by average_minutes desc
+-- members: friday, sunday, saturday.
+-- casuals: saturday, sunday, monday.
+
+
+-- which months(3) has the highest members and casuals hire?
+select  customer_type, month_hire, count(month_hire) as counts
+from cyclistic_trans_2022
+group by month_hire, customer_type
+order by counts desc
+-- August, July, and september has the highest hire for members, July, June, August has the highest hire for casuals
+
+-- which months(3) has the highest avearage minutes for members and casuals hire?
+select customer_type, month_hire, avg(mins_hire) as average_minutes
+from cyclistic_trans_2022
+group by month_hire, customer_type
+order by average_minutes desc
+-- August, July, and June has the highest average minutes for members. January, July, and April has the highest average minutes for members.
+
+-- which month has the highest average minutes of hire for classic or electric bikes?
+select customer_type, month_hire, avg(mins_hire) as average_minutes
+from cyclistic_trans_2022
+where ride_type = 'classic_bike' or ride_type = 'electric_bike'
+group by month_hire, customer_type
+order by average_minutes desc
+-- August, July, and June has the highest average minutes for members. May, June, and March has the highest average minutes for members.
+-- without docked_bikes the months with the highest average minutes for casuals varies. This must be considered because docked_bikes are few but casual customers spends a lot of time using it.
+
+-- which quarter has the highest members and casuals hire?
+select customer_type, yearQ_hire, count(yearQ_hire) as counts
+from cyclistic_trans_2022
+group by yearQ_hire, customer_type
+order by counts desc
+-- Q3 and Q2 
+
+-- which quarter has the highest average minutes for both members and casuals hire?
+select customer_type, yearQ_hire, avg(mins_hire) as average_mins
+from cyclistic_trans_2022
+group by  customer_type, yearQ_hire
+order by average_mins desc
+-- for casuals: Q1 and Q3 has the highest average minutes.
+-- for members: Q2 and Q3 has the highest average minutes.
+
+
+-- how do members and casuals vary in their average amount of minutes hired?
+select customer_type, avg(mins_hire) average_minutes
+from cyclistic_trans_2022
+group by customer_type
+-- Averagely casuals spends 29 minutes, member spends 12 minutes.
+
+-- how do members and casuals vary in their maximum amount of minutes hired?
+select customer_type, max(mins_hire) maximum_minutes
+from cyclistic_trans_2022
+group by customer_type
+-- Maximum, casuals spends 36258 minutes, member spends 1560 minutes.
+
+-- What is the average minutes spent by each bike type? which is the highest?
+select ride_type, avg(mins_hire) as average_minutes
+from [dbo].[cyclistic_trans_2022]
+group by ride_type
+order by average_minutes desc
+-- docked bike spends an avg of 120 mins(2 hrs), classic bike 19 minutes, electric bike 13 minutes.
+
+-- which months are docked bikes used mostly?
+select ride_type, month_hire, count(month_hire) as count 
+from [dbo].[cyclistic_trans_2022]
+where ride_type = 'docked_bike'
+group by ride_type, month_hire
+order by count desc
+-- July, June, May, August... and are hired by only casuals.
+-- since Cyclistic aim is to convert casuals, orientation should be in place for those months, the riders spends ample time using the bike.
+
+-- which quarters are docked bikes used mostly?
+select ride_type, yearQ_hire, count(yearQ_hire) as quarter_counts 
+from [dbo].[cyclistic_trans_2022]
+where ride_type = 'docked_bike'
+group by ride_type, yearQ_hire
+order by quarter_counts  desc
+-- Q3 qnd Q2
+
+-- When are docked bikes hired the most? Day or Night?
+select ride_type, day_night, count(day_night) as day_night_counts 
+from [dbo].[cyclistic_trans_2022]
+where ride_type = 'docked_bike'
+group by ride_type, day_night
+order by day_night_counts   desc
+-- docked_bikes are hired mostly at daytime(69%)
+
+-- Which weekday are docked bikes hired the most? 
+select ride_type, weekday_hire, count(weekday_hire) as weekday_counts 
+from [dbo].[cyclistic_trans_2022]
+where ride_type = 'docked_bike'
+group by ride_type, weekday_hire
+order by weekday_counts   desc
+-- docked_bikes are hired mostly on saturdays, sundays, fridays... 
+
+
+select top 10 *
+from [dbo].[cyclistic_trans_2022]
+
+
+
