@@ -20,6 +20,7 @@ This analysis on Cyclistic bike aims to provide insights into the uses of bikes 
 
 ## Data Sources
 Bike data: The datasets used for this analysis is the “2022-divvytripdata.csv” file for each month of January – December, containing detailed information of bike riders and their hire type.
+Data can be found here -- https://drive.google.com/file/d/1VP8VOcp0LFnepUN02Ff7YDAs-KFM7O3O/view?usp=drive_link
 
 ## Tools
 - Excel – Data Cleaning 
