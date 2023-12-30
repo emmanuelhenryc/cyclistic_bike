@@ -138,8 +138,4 @@ order by weekday_counts   desc
 -- docked_bikes are hired mostly on saturdays, sundays, fridays... 
 
 
-select top 10 *
-from [dbo].[cyclistic_trans_2022]
-
-
 
