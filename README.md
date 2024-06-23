@@ -65,7 +65,7 @@ The analysis results are summarized as follows:
 Based on the analysis, we recommend the following actions to convert casual riders to annual members:
 -	Ads on membership should be delivered via electric and docked bikes mostly.
 -	Membership marketing/awareness should be done mostly on Saturday, Sunday, and Monday.
-- Casual riders use bikes mostly on June, July and August. Discount should be given to only "members"(annual) on these momths in order to catch the attention of casual riders and possibly get them to register to become a member in order to be able to receive discounts. 
+- Casual riders use bikes mostly on June, July and August. Discount should be given to only "members"(annual) on these months in order to capture the attention of casual riders and possibly get them to register as a member in order to receive discounts. 
 
 
    
