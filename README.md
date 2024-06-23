@@ -53,12 +53,12 @@ order by average_minutes desc
 
 ## Result/Findings
 The analysis results are summarized as follows:
-Annual members and casual riders hire bikes majorly in the second and third quarter of the year.
-Members uses either of classic or electric bikes, Casual riders uses either of classic, electric, or docked bikes.
-Casual riders increase as the week progresses from Sunday to Friday, with a decrease from Friday to Saturday.
-Annual members increase on the first - second day of the week and decreases as the week progresses.
-Casual riders spend more time averagely with a bike as compared to members.
-Member riders use classic bike mostly, casual riders use electric bike mostly.
+1. Annual members and casual riders hire bikes majorly in the second and third quarter of the year.
+2. Members uses either of classic or electric bikes, Casual riders uses either of classic, electric, or docked bikes.
+3. Casual riders increase as the week progresses from Sunday to Friday, with a decrease from Friday to Saturday.
+4. Annual members increase on the first - second day of the week and decreases as the week progresses.
+5. Casual riders spend more time averagely with a bike as compared to members.
+6. Member riders use classic bike mostly, casual riders use electric bike mostly.
 
 ## Recommendations
 Based on the analysis, we recommend the following actions:
