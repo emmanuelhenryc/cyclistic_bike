@@ -40,7 +40,8 @@ EDA involves exploring the sales data to answer key questions, such as:
 - How many minutes averagely do members and casuals spend on a bike?
 - Which bike is mostly used by members and casuals?
 - Which year quarter(s) has the highest bike hire?
-This is done using SQL. It can be found in the code section. 
+
+EDA was done using SQL. It can be found in the code section. 
 ## Data Analysis
 
 ```sql
@@ -54,18 +55,17 @@ order by average_minutes desc
 ## Result/Findings
 The analysis results are summarized as follows:
 1. Annual members and casual riders hire bikes majorly in the second and third quarter of the year.
-2. Members uses either of classic or electric bikes, Casual riders uses either of classic, electric, or docked bikes.
+2. Members use either of classic or electric bikes, Casual riders use either of classic, electric, or docked bikes.
 3. Casual riders increase as the week progresses from Sunday to Friday, with a decrease from Friday to Saturday.
-4. Annual members increase on the first - second day of the week and decreases as the week progresses.
+4. Annual members increase on the first to second day of the week and decrease as the week progresses.
 5. Casual riders spend more time averagely with a bike as compared to members.
-6. Member riders use classic bike mostly, casual riders use electric bike mostly.
+6. Annual members use classic bike mostly, casual riders use electric bike mostly.
 
 ## Recommendations
-Based on the analysis, we recommend the following actions:
+Based on the analysis, we recommend the following actions to convert casual riders to annual members:
 -	Ads on membership should be delivered via electric and docked bikes mostly.
 -	Membership marketing/awareness should be done mostly on Saturday, Sunday, and Monday.
--	Discount should be given to annual members on June, July, and August in order to lure casual riders. Casual riders use bikes mostly these months.
-
+- Casual riders use bikes mostly on June, July and August. Discount should be given to only "members"(annual) on these momths in order to catch the attention of casual riders and possibly get them to register to become a member in order to be able to receive discounts. 
 
 
    
