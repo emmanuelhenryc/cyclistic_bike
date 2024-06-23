@@ -16,7 +16,7 @@
 
 
 ## Project Overview
-This analysis on Cyclistic bike aims to provide insights into the uses of bikes by two customer types. By analyzing various aspect of the bike data, we aim at identifying trends on how member and casual riders use bike differently, make data-driven recommendations, and gain a deeper understanding of the company’s performance.
+Analysis on Cyclistic bike aims to provide insights into the uses of bikes by two customer types. By analyzing various aspect of the bike data, we aim at identifying trends on how member and casual riders use bike differently, make data-driven recommendations, and gain a deeper understanding of the company’s performance.
 
 ## Data Sources
 Bike data: The datasets used for this analysis is the “2022-divvytripdata.csv” file for each month of January – December, containing detailed information of bike riders and their hire type.
